@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <iomanip>
 
 using namespace std;
 
@@ -31,8 +32,8 @@ int writeFile(const string &filename) {
         cout << "Salary: ";
         cin >> salary;
 
-        // Write employee details to the file
-        file << id << " " << name << " " << department << " " << salary << endl;
+        file << id << " " << name << " " << department << " " 
+             << fixed << setprecision(2) << salary << endl;
     }
 
     file.close();

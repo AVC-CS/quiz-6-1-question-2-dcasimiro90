@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <iomanip>
 
 using namespace std;
 
@@ -22,7 +23,8 @@ int readFile(const string &filename) {
     cout << "------------------------------------------\n";
 
     while (file >> id >> name >> department >> salary) {
-        cout << id << "\t" << name << "\t\t" << department << "\t\t" << salary << endl;
+        cout << id << "\t" << name << "\t\t" << department << "\t\t" 
+             << fixed << setprecision(2) << salary << endl;
         totalSalary += salary;
         empCount++;
     }
